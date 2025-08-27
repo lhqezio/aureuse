@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    background-color: #000000;
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  .neon-blue {
+    color: #00d4ff;
+  }
+  
+  .neon-blue-glow {
+    color: #00d4ff;
+    filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.5));
+  }
+  
+  .gradient-text {
+    background: linear-gradient(to right, #00d4ff, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
