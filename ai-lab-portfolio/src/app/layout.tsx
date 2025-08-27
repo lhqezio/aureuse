@@ -23,6 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased">
+        {/* Organic, Human Background for Entire Page */}
+        <div className="organic-bg">
+          <div className="organic-layer-1" />
+          <div className="organic-layer-2" />
+          <div className="organic-layer-3" />
+        </div>
+        
         <Navigation />
         <main className="pt-16">
           {children}

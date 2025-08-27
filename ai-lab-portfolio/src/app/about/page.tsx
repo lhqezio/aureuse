@@ -72,7 +72,7 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black pt-20">
+    <div className="min-h-screen pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <motion.div
@@ -81,14 +81,14 @@ const AboutPage = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6 text-balance">
             About Our Lab
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8 text-balance">
             We are a team of passionate researchers and engineers dedicated to advancing the frontiers of artificial intelligence.
           </p>
           <div className="max-w-4xl mx-auto">
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-gray-400 text-lg leading-relaxed text-balance">
               Our mission is to develop lightweight, efficient AI solutions that can be deployed anywhere, 
               from edge devices to cloud platforms. We believe in making AI accessible, practical, and 
               beneficial for everyone.
@@ -109,7 +109,7 @@ const AboutPage = () => {
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="bg-charcoal rounded-2xl p-6 border border-gray-800 hover:border-neon-blue/50 transition-all duration-300 group"
+              className="ios-card p-6 group hover:ios-card-hover transition-all duration-500"
             >
               {/* Avatar */}
               <div className="flex justify-center mb-6">
@@ -117,17 +117,17 @@ const AboutPage = () => {
                   <div className="w-24 h-24 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full flex items-center justify-center">
                     <div className="text-gray-500 text-xs text-center">Avatar</div>
                   </div>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue/20 to-neon-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-claude-primary/20 to-claude-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
 
               {/* Member Info */}
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-neon-blue transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-claude-accent transition-colors duration-300">
                   {member.name}
                 </h3>
                 
-                <p className="text-neon-blue text-sm font-medium mb-4">
+                <p className="claude-primary text-sm font-medium mb-4">
                   {member.role}
                 </p>
                 
@@ -135,9 +135,6 @@ const AboutPage = () => {
                   {member.bio}
                 </p>
               </div>
-
-              {/* Hover Effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-neon-blue/5 to-neon-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </motion.div>
           ))}
         </motion.div>
@@ -150,18 +147,22 @@ const AboutPage = () => {
           viewport={{ once: true }}
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          <div className="text-center">
-            <div className="text-4xl font-bold gradient-text mb-2">50+</div>
-            <div className="text-gray-400">Research Papers</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold gradient-text mb-2">15+</div>
-            <div className="text-gray-400">Active Projects</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold gradient-text mb-2">100+</div>
-            <div className="text-gray-400">Citations</div>
-          </div>
+          {[
+            { number: "50+", label: "Research Papers" },
+            { number: "15+", label: "Active Projects" },
+            { number: "100+", label: "Citations" }
+          ].map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="ios-card p-8 text-center hover:ios-card-hover transition-all duration-500"
+            >
+              <div className="text-4xl font-bold gradient-text mb-2">{stat.number}</div>
+              <div className="text-gray-400">{stat.label}</div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Call to Action */}
@@ -176,9 +177,9 @@ const AboutPage = () => {
             Want to join our research team?
           </p>
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-8 py-4 bg-neon-blue text-black font-semibold rounded-full text-lg transition-all duration-300 hover:bg-neon-cyan"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="ios-button inline-flex items-center px-8 py-4 claude-primary-bg text-white font-semibold text-lg transition-all duration-300 hover:claude-accent-bg"
           >
             Contact Us
             <svg

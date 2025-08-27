@@ -82,7 +82,7 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black pt-20">
+    <div className="min-h-screen pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <motion.div
@@ -91,10 +91,10 @@ const ContactPage = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6 text-balance">
             Get in Touch
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto text-balance">
             Ready to collaborate on the next breakthrough in AI? We&apos;d love to hear from you.
           </p>
         </motion.div>
@@ -123,7 +123,7 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg focus:ring-2 focus:ring-neon-blue focus:border-transparent text-white placeholder-gray-500 transition-all duration-300"
+                  className="w-full px-4 py-3 ios-card border-0 focus:ring-2 focus:ring-claude-primary focus:ring-opacity-50 text-white placeholder-gray-500 transition-all duration-300"
                   placeholder="Your name"
                 />
               </motion.div>
@@ -139,7 +139,7 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg focus:ring-2 focus:ring-neon-blue focus:border-transparent text-white placeholder-gray-500 transition-all duration-300"
+                  className="w-full px-4 py-3 ios-card border-0 focus:ring-2 focus:ring-claude-primary focus:ring-opacity-50 text-white placeholder-gray-500 transition-all duration-300"
                   placeholder="your.email@example.com"
                 />
               </motion.div>
@@ -155,7 +155,7 @@ const ContactPage = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg focus:ring-2 focus:ring-neon-blue focus:border-transparent text-white placeholder-gray-500 transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 ios-card border-0 focus:ring-2 focus:ring-claude-primary focus:ring-opacity-50 text-white placeholder-gray-500 transition-all duration-300 resize-none"
                   placeholder="Tell us about your project or inquiry..."
                 />
               </motion.div>
@@ -165,7 +165,7 @@ const ContactPage = () => {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-8 py-4 bg-neon-blue text-black font-semibold rounded-lg text-lg transition-all duration-300 hover:bg-neon-cyan hover:shadow-lg hover:shadow-neon-blue/25"
+                  className="w-full px-8 py-4 ios-button claude-primary-bg text-white font-semibold text-lg transition-all duration-300 hover:claude-accent-bg"
                 >
                   Send Message
                 </motion.button>
@@ -189,23 +189,25 @@ const ContactPage = () => {
                 <motion.div
                   key={info.title}
                   variants={itemVariants}
-                  className="flex items-start space-x-4 p-4 bg-charcoal rounded-lg border border-gray-800 hover:border-neon-blue/50 transition-all duration-300"
+                  className="ios-card p-4 hover:ios-card-hover transition-all duration-500"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-neon-blue/10 rounded-lg flex items-center justify-center text-neon-blue">
-                    {info.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-medium text-white mb-1">{info.title}</h3>
-                    {info.link ? (
-                      <a
-                        href={info.link}
-                        className="text-gray-400 hover:text-neon-blue transition-colors duration-300"
-                      >
-                        {info.value}
-                      </a>
-                    ) : (
-                      <p className="text-gray-400">{info.value}</p>
-                    )}
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-12 h-12 claude-primary-bg rounded-lg flex items-center justify-center text-white">
+                      {info.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-medium text-white mb-1">{info.title}</h3>
+                      {info.link ? (
+                        <a
+                          href={info.link}
+                          className="text-gray-400 hover:text-claude-accent transition-colors duration-300"
+                        >
+                          {info.value}
+                        </a>
+                      ) : (
+                        <p className="text-gray-400">{info.value}</p>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -214,7 +216,7 @@ const ContactPage = () => {
             {/* Additional Info */}
             <motion.div
               variants={itemVariants}
-              className="mt-8 p-6 bg-charcoal rounded-lg border border-gray-800"
+              className="ios-card p-6 hover:ios-card-hover transition-all duration-500"
             >
               <h3 className="text-lg font-medium text-white mb-3">Let&apos;s Collaborate</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
@@ -233,7 +235,7 @@ const ContactPage = () => {
           viewport={{ once: true }}
           className="mt-20"
         >
-          <div className="bg-charcoal rounded-2xl p-8 border border-gray-800">
+          <div className="ios-card p-8 hover:ios-card-hover transition-all duration-500">
             <div className="text-center">
               <div className="w-full h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center">
                 <div className="text-gray-500 text-center">

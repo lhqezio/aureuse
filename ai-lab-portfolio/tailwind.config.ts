@@ -9,13 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'neon-blue': '#00d4ff',
-        'neon-cyan': '#00ffff',
-        'charcoal': '#1a1a1a',
-        'dark-charcoal': '#0f0f0f',
+        // Sleek Cream and Orange Color Palette
+        'cream-white': '#fefefe',
+        'cream-light': '#fafafa',
+        'cream-warm': '#f8f8f8',
+        'orange-primary': '#ff6b35',
+        'orange-secondary': '#ff8c42',
+        'orange-accent': '#ffa726',
+        'orange-dark': '#e65100',
+        'text-dark': '#1a1a1a',
+        'text-dark-secondary': '#4a4a4a',
+        'text-dark-muted': '#6b6b6b',
       },
       fontFamily: {
         'mono': ['JetBrains Mono', 'monospace'],
+        'serif': ['Playfair Display', 'Source Serif Pro', 'Georgia', 'serif'],
+        'sans': ['Outfit', 'Albert Sans', 'Inter', 'system-ui', 'sans-serif'],
+        'outfit': ['Outfit', 'sans-serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -23,6 +33,8 @@ const config: Config = {
         'float-slow': 'float 8s ease-in-out infinite 1s',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'breathe': 'breathe 8s ease-in-out infinite',
+        'float-gentle': 'float-gentle 6s ease-in-out infinite',
+        'pulse-subtle': 'pulse-subtle 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         float: {
@@ -34,6 +46,14 @@ const config: Config = {
         breathe: {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.05)' },
+        },
+        'float-gentle': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'pulse-subtle': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.8' },
         },
       },
     },

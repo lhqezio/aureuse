@@ -72,7 +72,7 @@ const PortfolioPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black pt-20">
+    <div className="min-h-screen pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <motion.div
@@ -81,10 +81,10 @@ const PortfolioPage = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6 text-balance">
             Our Projects
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto text-balance">
             Explore our cutting-edge AI research and innovative projects that are shaping the future of technology.
           </p>
         </motion.div>
@@ -102,23 +102,23 @@ const PortfolioPage = () => {
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="bg-charcoal rounded-2xl overflow-hidden border border-gray-800 hover:border-neon-blue/50 transition-all duration-300 group"
+              className="ios-card overflow-hidden group hover:ios-card-hover transition-all duration-500"
             >
               {/* Project Image */}
               <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
                 <div className="text-gray-500 text-sm">Project Screenshot</div>
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Project Content */}
               <div className="p-6">
                 <div className="mb-3">
-                  <span className="inline-block px-3 py-1 bg-neon-blue/10 text-neon-blue text-xs font-medium rounded-full border border-neon-blue/20">
+                  <span className="inline-block px-3 py-1 claude-primary-bg text-white text-xs font-medium rounded-full">
                     {project.category}
                   </span>
                 </div>
                 
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-neon-blue transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-claude-accent transition-colors duration-300">
                   {project.title}
                 </h3>
                 
@@ -129,7 +129,7 @@ const PortfolioPage = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center text-neon-blue hover:text-neon-cyan text-sm font-medium transition-colors duration-300"
+                  className="inline-flex items-center claude-primary hover:text-claude-accent text-sm font-medium transition-colors duration-300"
                 >
                   Learn More
                   <svg
@@ -163,9 +163,9 @@ const PortfolioPage = () => {
             Interested in collaborating on a project?
           </p>
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-8 py-4 bg-neon-blue text-black font-semibold rounded-full text-lg transition-all duration-300 hover:bg-neon-cyan"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="ios-button inline-flex items-center px-8 py-4 claude-primary-bg text-white font-semibold text-lg transition-all duration-300 hover:claude-accent-bg"
           >
             Get in Touch
             <svg
